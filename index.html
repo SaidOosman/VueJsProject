@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson app</title>
+    <script src="https://unpkg.com/vue@2.7.8/dist/vue.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <body>
+        
+        <div id="app">
+        <header>
+        <h1 v-text="sitename"></h1>
+        </header>
+            <main>
+                <div class="lessons">
+                <div>
+                <!-- uses the "mustache" syntax  -->
+                <p>Subject: {{lesson.subject}}</p>
+                <p>Location: {{lesson.location}}</p>
+                <p>Price: {{lesson.price}}</p>
+                <p>Space: {{lesson.space}}</p>
+                <button v-on:click="addToCart">Add to cart</button>
+                 </div>
+                 <figure>
+                    <!-- bind source to 'lesson.image' in 'data' -->
+                    <img v-bind:src="lesson.image" alt="math icon" width="100">
+                    </figure>
+                </div>
+                </main>
+        </div>
+        <script src="VueJsApp.js"></script>
+        </body>
+</html>

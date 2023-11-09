@@ -1,0 +1,18 @@
+   /* allows me to move the image to the right of the text*/
+   img {
+    position: absolute;
+    top: 15px;
+    right: 10px;
+  }
+  /* allows me to move the position of the lesson*/
+.lessons{
+    position:relative;
+    margin-top: 100px;
+    border: 3px solid #000;
+    width: 250px;
+}
+/* moves the text more to the right so it is not on the border*/
+.lessons div p{
+    position: relative;
+    left: 10px;
+}
