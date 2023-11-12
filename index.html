@@ -58,9 +58,15 @@
 <!-- This is binded to phone number -->
 <input v-model.number="order.PhoneNum" type="number"/>
 </p>
+<p>
+    <strong>Address:</strong>
+    <!-- This is binded to address -->
+    <input v-model="order.address"/>
+    </p>
 <h2>Order Information</h2>
 <p>Name: {{order.Name}}</p>
 <p>Phone Number: {{order.PhoneNum}}</p>
+<p>adress: {{order.address}}</p>
                 <button v-on:click="submitForm">Checkout</button>
                 
 

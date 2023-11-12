@@ -8,6 +8,7 @@ var webstore = new Vue({
     order: {
         Name: '',
         PhoneNum: null,
+        address: '',
         },
     lesson: { //my first lesson data
     id: 10,
