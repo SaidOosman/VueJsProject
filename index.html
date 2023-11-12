@@ -12,7 +12,7 @@
         <div id="app">
         <header>
         <h1 v-text="sitename"></h1>
-        <button>
+        <button v-on:click="ShowCheckout">
              {{ LessonsInCart }}
              <span class="fa-solid fa-cart-shopping">
              checkout
@@ -20,20 +20,49 @@
         </button>
         </header>
             <main>
+                <div v-if="ShowLesson">
                 <div class="lessons">
                 <div>
                 <!-- uses the "mustache" syntax  -->
+                
                 <p>Subject: {{lesson.subject}}</p>
                 <p>Location: {{lesson.location}}</p>
                 <p>Price: {{lesson.price}}</p>
                 <p>Space: {{lesson.space}}</p>
-                <input type="button" value="Add to the cart" v-on:click="addToCart" v-show="AdditionToCart"/>
-                 </div>
+                
+                <input type="button" value="Add to the cart" v-on:click="addToCart" v-if="addToCartVisible"  />
+                <div v-else>
+                    <button disabled> Add to the Cart</button>
+                     No more space in lesson
+
+                </div>
+            </div>
                  <figure>
                     <!-- bind source to 'lesson.image' in 'data' -->
                     <img v-bind:src="lesson.image" alt="math icon" width="100">
                     </figure>
                 </div>
+            </div>
+            <div v-else>
+               <h1>welcome to the checkout page</h1> 
+               <h2>Checkout</h2>
+               <p>
+                <strong>Name:</strong>
+                <!-- This input field is bound to 'firstName' in the 'order' object -->
+                <input v-model.trim="order.Name"/>
+                </p>
+                <p>
+                    <strong>Phone Number:</strong>
+                    <!-- This input field is bound to 'lastName' in the 'order' object -->
+                    <input v-model.number="order.phoneNum" type="number" />
+                    </p>
+                <h2>Order Information</h2>
+                <p>Name: {{order.Name}}</p>
+                <p>Phone Number: {{order.phoneNum}}</p>
+                <button v-on:click="submitForm">Place Order</button>
+                
+
+            </div>
                 </main>
         </div>
         <script src="VueJsApp.js"></script>

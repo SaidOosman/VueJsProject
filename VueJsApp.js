@@ -4,12 +4,17 @@ var webstore = new Vue({
     data: { // values of the data
     // the key matches the value of 'v-text/html' 
     sitename: 'Lesson Application', //title of the site
+    ShowLesson: true,
+    order: {
+        Name: '',
+        PhoneNum: null,
+        },
     lesson: { //my first lesson data
     id: 10,
     subject: "Maths",
     location: "London",
     price: 100,
-    space:5,
+    space:10,
     image: "images/lesson-icon.png"
     
     },
@@ -17,17 +22,26 @@ var webstore = new Vue({
 
 },
     methods: { //function of the add cart
+        ShowCheckout:function(){
+            if (this.ShowLesson) {
+                this.ShowLesson = false
+            } else {
+                this.ShowLesson = true
+            }
+        },
         addToCart: function () {
         this.cart.push (this.lesson.id);
         }
         },
+        submitForm() {alert('Order submitted!')},
+
         computed: {
             LessonsInCart: function(){
-                return this.cart.length || "";
+                return this.cart.length || "" ;
             },
-            AdditionToCart: function(){
-                return this.lesson.space > this.cart.LessonsInCart
-            }
+            addToCartVisible: function () {
+                return this.lesson.space > this.LessonsInCart;
+              },
         }
         
         
