@@ -33,7 +33,18 @@ var webstore = new Vue({
         this.cart.push (this.lesson.id);
         }
         },
-        submitForm() {alert('Order submitted!')},
+        submitForm() {alert('Order submitted!')
+    },
+        verifyName: function () {
+         // regular expression for string
+         var nameRegex = /^[A-Za-z\s]+$/;
+         return nameRegex.test(this.order.Name);
+    },
+        verifyPhoneNumber: function () {
+             // regular expression for numbers
+               var phoneRegex = /^[0-9\-]*$/;
+         return phoneRegex.test(this.order.PhoneNum);
+    },
 
         computed: {
             LessonsInCart: function(){

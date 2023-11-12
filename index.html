@@ -48,18 +48,18 @@
                <h2>details</h2>
                <h2>Checkout</h2>
 <p>
-<strong>First Name:</strong>
-<!-- This input field is bound to 'firstName' in the 'order' object -->
-<input v-model="order.firstName"/>
+<strong>Name:</strong>
+<!-- This input is bound to Name-->
+<input v-model="order.Name"/>
 </p>
 <p>
 <strong>Phone Number:</strong>
-<!-- This input field is bound to 'lastName' in the 'order' object -->
+<!-- This is binded to phone number -->
 <input v-model.number="order.PhoneNum" type="number"/>
 </p>
 <h2>Order Information</h2>
-<p>First Name: {{order.Name}}</p>
-<p>Last Name: {{order.PhoneNum}}</p>
+<p>Name: {{order.Name}}</p>
+<p>Phone Number: {{order.PhoneNum}}</p>
                 <button v-on:click="submitForm">Checkout</button>
                 
 
@@ -67,5 +67,6 @@
                 </main>
         </div>
         <script src="VueJsApp.js"></script>
+
         </body>
 </html>
