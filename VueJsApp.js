@@ -45,7 +45,14 @@ var webstore = new Vue({
                var phoneRegex = /^[0-9\-]*$/;
          return phoneRegex.test(this.order.PhoneNum);
     },
-
+    sortLessons: function (attribute) {
+        if (this.sortAttribute === attribute) {
+            this.sortAscending = !this.sortAscending;
+        } else {
+            this.sortAttribute = attribute;
+            this.sortAscending = true;
+        }
+    },
         computed: {
             LessonsInCart: function(){
                 return this.cart.length || "" ;
