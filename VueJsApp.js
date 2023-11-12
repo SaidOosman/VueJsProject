@@ -5,7 +5,7 @@ var webstore = new Vue({
     // the key matches the value of 'v-text/html' 
     sitename: 'Lesson Application', //title of the site
     ShowLesson: true,
-    order: {
+    order: {// order form
         Name: '',
         PhoneNum: null,
         address: '',
@@ -30,13 +30,13 @@ var webstore = new Vue({
                 this.ShowLesson = false
             } else {
                 this.ShowLesson = true
-            }
+            }//makes checkout visible 
         },
         addToCart: function () {
         this.cart.push (this.lesson.id);
-        }
+        }// add to cart
         },
-        submitForm() {alert('Order submitted!')
+        submitForm() {alert('Order submitted!') // alert at the end
     },
         verifyName: function () {
          // regular expression for string
@@ -51,7 +51,7 @@ var webstore = new Vue({
     sortLessons: function (attribute) {
         if (this.sortAttribute === attribute) {
             this.sortAscending = !this.sortAscending;
-        } else {
+        } else { // sorting, not the same 
             this.sortAttribute = attribute;
             this.sortAscending = true;
         }
@@ -60,7 +60,7 @@ var webstore = new Vue({
             const valueB = b[attribute];
 
             if (this.sortAscending) {
-                return valueA.localeCompare(valueB);
+                return valueA.localeCompare(valueB); // compares the strings to each other
             } else {
                 return valueB.localeCompare(valueA);
             }
