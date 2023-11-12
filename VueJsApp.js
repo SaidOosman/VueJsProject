@@ -52,7 +52,17 @@ var webstore = new Vue({
             this.sortAttribute = attribute;
             this.sortAscending = true;
         }
-    },
+        this.Lessons.sort((a, b) => {
+            const valueA = a[attribute];
+            const valueB = b[attribute];
+
+            if (this.sortAscending) {
+                return valueA.localeCompare(valueB);
+            } else {
+                return valueB.localeCompare(valueA);
+            }
+    });
+},
         computed: {
             LessonsInCart: function(){
                 return this.cart.length || "" ;
