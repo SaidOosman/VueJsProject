@@ -9,6 +9,7 @@ var webstore = new Vue({
         Name: '',
         PhoneNum: null,
         address: '',
+        birthday: '',
         },
     lesson: { //my first lesson data
     id: 10,
