@@ -6,11 +6,18 @@
     <title>Lesson app</title>
     <script src="https://unpkg.com/vue@2.7.8/dist/vue.js"></script>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <body>
         
         <div id="app">
         <header>
         <h1 v-text="sitename"></h1>
+        <button>
+             {{ LessonsInCart }}
+             <span class="fa-solid fa-cart-shopping">
+             checkout
+
+        </button>
         </header>
             <main>
                 <div class="lessons">
@@ -20,7 +27,7 @@
                 <p>Location: {{lesson.location}}</p>
                 <p>Price: {{lesson.price}}</p>
                 <p>Space: {{lesson.space}}</p>
-                <button v-on:click="addToCart">Add to cart</button>
+                <input type="button" value="Add to the cart" v-on:click="addToCart" v-show="AdditionToCart"/>
                  </div>
                  <figure>
                     <!-- bind source to 'lesson.image' in 'data' -->

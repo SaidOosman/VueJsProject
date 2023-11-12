@@ -9,17 +9,28 @@ var webstore = new Vue({
     subject: "Maths",
     location: "London",
     price: 100,
-    space:10,
+    space:5,
     image: "images/lesson-icon.png"
+    
     },
     cart:[],// empty array
 
+},
     methods: { //function of the add cart
         addToCart: function () {
-        this.cart.push
-        (this.lesson.id);
+        this.cart.push (this.lesson.id);
         }
+        },
+        computed: {
+            LessonsInCart: function(){
+                return this.cart.length || "";
+            },
+            AdditionToCart: function(){
+                return this.lesson.space > this.cart.LessonsInCart
+            }
         }
-    }
+        
+        
+    
 
     });
