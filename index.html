@@ -63,10 +63,16 @@
     <!-- This is binded to address -->
     <input v-model="order.address"/>
     </p>
+    <p>
+        <strong>birthday:</strong>
+        <!-- This is binded to birthday -->
+        <input v-model="order.birthday"/>
+        </p>
 <h2>Order Information</h2>
 <p>Name: {{order.Name}}</p>
 <p>Phone Number: {{order.PhoneNum}}</p>
 <p>adress: {{order.address}}</p>
+<p>birhtday: {{order.birthday}}</p>
                 <button v-on:click="submitForm">Checkout</button>
                 
 
